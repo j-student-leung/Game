@@ -1,0 +1,60 @@
+
+
+.Character {
+    width: calc(32px * var(--pixel-size));
+    height: calc(32px * var(--pixel-size));
+    overflow: hidden;
+    position: relative;
+    margin: 4em auto;
+    --pixel-size: 6;
+      z-index: 38;
+  }
+  
+  .Character_spritesheet {
+    -webkit-animation: moveSpritesheet 1s steps(4) infinite;
+            animation: moveSpritesheet 1s steps(4) infinite;
+    width: calc(128px * var(--pixel-size));
+    position: absolute;
+  }
+  
+  .Character_shadow {
+    position: absolute;
+    width: calc(32px * var(--pixel-size));
+    height: calc(32px * var(--pixel-size));
+  }
+  
+  .pixelart {
+    -ms-interpolation-mode: nearest-neighbor;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: pixelated;
+  }
+  
+  .face-right {
+    top: calc(-32px * var(--pixel-size));
+  }
+  
+  .face-up {
+    top: calc(-64px * var(--pixel-size));
+  }
+  
+  .face-left {
+    top: calc(-96px * var(--pixel-size));
+  }
+  
+  @-webkit-keyframes moveSpritesheet {
+    from {
+      transform: translate3d(0px, 0, 0);
+    }
+    to {
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+  
+  @keyframes moveSpritesheet {
+    from {
+      transform: translate3d(0px, 0, 0);
+    }
+    to {
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
